@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Video Game Details</h2>
+<p>Video Game Title : {{videogamedetail.Title}}<br />
+    Developer : {{videogamedetail.Developer}}<br />
+    Release Date : {{videogamedetail.ReleaseDate}}<br />
+    Genre : {{videogamedetail.Genre}}</p>
+    <a href="{% url 'addreview' id=videogamedetail.id %}"><button>Add Review</button></a>
+    <h3>Reviews</h3>
+    <caption>Total Reviews: {{ review_count }} | Average Rating : {{ review_average }} </caption>
+    <ul>
+    {% for p in review_list  %}
+    <li>Author: {{ p.Author }} | {{ p.Rating }} Stars<br/>
+        <a href="{% url 'review' id=p.id %}">{{ p.Title }}</a></li>
+    {% endfor %}</ul>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Video Games List</h2>
+<ul>
+    {% for p in videogame_list  %}
+    <li><a href="{% url 'detail' id=p.id %}">{{ p.Title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

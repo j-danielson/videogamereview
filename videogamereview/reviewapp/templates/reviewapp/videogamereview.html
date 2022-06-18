@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Video Game Review</h2>
+<p>
+    this is the vgid : {{ vgreview.vgid }}<br />
+    user : {{ vgreview.user }}<br />
+    review date : {{ vgreview.reviewdate }}<br />
+    title : {{ vgreview.reviewtitle }}<br />
+    rating : {{ vgreview.rating }} Stars<br />
+    Review : {{ vgreview.reviewtext }}
+</p>
+{% endblock %}
